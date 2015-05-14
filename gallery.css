@@ -1,0 +1,133 @@
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    font-family: 'Lato', "Helvetica Neue", sans-serif;
+    color: #2c3e50;
+    background-color: #F2F2F2;
+    margin:0px 0px 0px 0px;
+    height:100%;
+}
+
+
+#outer{
+  height: 100%;
+  overflow: hidden;
+}
+
+#wall{
+ height:90%;
+}
+
+#floor{
+  background-color: #AD6D23;
+  width:100%;
+  height: 10%;
+  bottom: 0px;
+}
+
+#bleft{
+  height: 100%;
+  width: 50px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background-color: Transparent;
+}
+
+#bright{
+  height:  100%;
+  width: 50px;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  background-color: Transparent;
+}
+
+#image1 {
+  left: 75px;
+}
+
+#image2 {
+  left: 500px;
+}
+
+#image3 {
+  left: 925px;
+}
+
+#image4 {
+  left: 1350px;
+}
+
+#image5 {
+  left: 1775px;
+}
+
+#image6 {
+  left: 2200px;
+}
+
+#image7 {
+  left: 2625px;
+}
+
+button {
+  background-color: #ffffff;
+  outline:none;
+}
+
+#button1 {
+  left: 395px;
+}
+
+#button2 {
+  left: 820px;
+}
+
+#button3 {
+  left: 1245px;
+}
+
+#button4 {
+  left: 1670px;
+}
+
+#button5 {
+  left: 2095px;
+}
+
+#button6 {
+  left: 2520px;
+}
+
+#button7 {
+  left: 2945px;
+}
+
+.info {
+  height: 35px;
+  width: 50px;
+  position: absolute;
+  bottom: 150px;
+  transition: left 0.5s ease-in-out 0s;
+}
+
+.visible {
+  /*for when images are on screen*/
+  border: solid 10px #000000;
+  display: block;
+  width: 300px;
+  visibility: visible;
+  position: absolute;
+  max-height: 70%;
+  bottom: 150px;
+  transition: left 0.5s ease-in-out 0s;
+}
+
+.hidden {
+  visibility: hidden; /*for when images are no longer seen*/;
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Testing animations</title>
+    <link href="gallery.css" rel="stylesheet" type="text/css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
+
+<script type="text/javascript" src="hammer.js"></script>
+
+<script type="text/javascript">
+var jump = 425;
+var counter = 0;	//which photo is in front
+var images = 7;		//need to make js that gets this number
+
+function slide(element, shift) {
+	var style = window.getComputedStyle(element);
+	var oldpos = style.getPropertyValue('left');
+	var newpos = (parseInt(oldpos, 10) + shift) + 'px';
+	element.style.left = newpos;
+}
+function slideLeft(){
+	if (counter < (images - 2)){	//right-most image is visible when counter = counter+3
+		element[counter + 3].className = "visible";
+		infoBox[counter + 3].className = "info";
+
+		for (i = 0; i<images; i++){
+			slide(element[i], -jump);
+			slide(infoBox[i], -jump);
+		}
+		setTimeout(function(){
+			element[counter].className = "hidden";
+			infoBox[counter].className = "hidden";
+			counter++;
+		}, 500);
+	}
+}
+function slideRight(){
+	if (counter > 0){	//left-most image is image 0
+		counter--;
+		element[counter].className = "visible";
+		infoBox[counter].className = "info";
+
+		for (i = 0; i<images; i++){
+			slide(element[i], jump);
+			slide(infoBox[i], jump);
+		}
+		setTimeout(function(){
+			element[counter+3].className = "hidden";
+			infoBox[counter+3].className = "hidden";
+		}, 500);
+	}
+}
+
+</script>
+
+</head>
+<body>
+	<div id="outer">
+		<div id="wall">
+
+			<img src="oj.jpg" id="image1" class="visible"></img>
+			<button id="button1" class="info">INFO</button>
+
+			<img src="cake.jpg"  id="image2" class="visible"></img>
+			<button id="button2" class="info">INFO</button>
+
+			<img src="venus.jpg" id="image3" class="visible"></img>
+			<button id="button3" class="info">INFO</button>
+
+			<img src="cottage.jpg" id="image4" class="hidden"></img>
+			<button id="button4" class="hidden">INFO</button>
+
+			<img src="background.png" id="image5" class="hidden"></img>
+			<button id="button5" class="hidden">INFO</button>
+
+			<img src="error.gif" id="image6" class="hidden"></img>
+			<button id="button6" class="hidden">INFO</button>
+
+			<img src="firefight.jpg" id="image7" class="hidden"></img>
+			<button id="button7" class="hidden">INFO</button>
+		</div>
+		<div id="floor">
+			<img src="http://gfx9.com/images/contents/w/o/wood-floor-picture-material-0.jpg" width=100%></img>
+		</div>
+			<button id="bleft" onClick="slideRight();" >←</button>
+			<button id="bright" onClick="slideLeft();" >→</button>
+	</div>
+<script type="text/javascript">
+
+	var element = []; //images
+	var infoBox = []; //info boxes
+
+	for (i = 0; i < images; i++){
+
+		element.push(document.getElementById("image" + (i+1)));
+		infoBox.push(document.getElementById("button" + (i+1)));
+		Hammer(element[i]).on("swipeleft", function(){
+			slideLeft();
+		});
+		Hammer(element[i]).on("swiperight", function() {
+			slideRight();
+		});
+	}
+
+</script>
+</body>
+</html>
