@@ -2,13 +2,16 @@ Art Gallery
 ===========
 
 TODO
------
+----
 
 * fix overlapping animations
 * integrate with JC's template
 * pop out the images
 * responsive design
 * comments
+* Find pages with [given tags](http://martyspellerberg.com/2011/11/creating-a-wordpress-tag-search-using-jquery/)
+	* Or [pull photos from a folder](https://stackoverflow.com/questions/22061073/how-do-i-get-images-file-name-from-a-given-folder) automatically
+	* Or automatically [scroll to a new page](https://stackoverflow.com/questions/9652944/jquery-page-scroll-to-different-page)
 
 Project Introduction
 ---------------------
