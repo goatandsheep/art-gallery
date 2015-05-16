@@ -34,7 +34,8 @@ body {
   left: 0px;
   top: 0px;
   position: absolute;
-  background-color: Transparent;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
 }
 
 #bright{
@@ -43,7 +44,8 @@ body {
   right: 0px;
   top: 0px;
   position: absolute;
-  background-color: Transparent;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
 }
 
 #image1 {
@@ -122,9 +124,9 @@ button {
   width: 300px;
   visibility: visible;
   position: absolute;
-  max-height: 70%;
+  maxHeight: 70%;
   bottom: 150px;
-  transition: left 0.5s ease-in-out 0s;
+  transition: width 0.5s ease-in-out 0s, left 0.5s ease-in-out 0s, bottom 0.5s ease-in-out 0s;
 }
 
 .hidden {
