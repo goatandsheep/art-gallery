@@ -23,6 +23,40 @@
     </div>
 
   </div>
+<div id="outer">
+    <div id="wall">
 
+      <img src="man.png" width=33% id="image1" class="visible"></img>
+      <button id="button1" class="info">INFO</button>
+
+      <img src="aotb-A.png" width=33% id="image2" onclick="imageShrink()" class="visible"></img>
+      
+
+     
+    </div>
+    <div id="floor">
+      <img src="man.png" width=33%></img>
+    </div>
+      <button id="bleft" onClick="slideRight();" >←</button>
+      <button id="bright" onClick="slideLeft();" >→</button>
+  </div>
+<script type="text/javascript">
+
+  var element = []; //images
+  var infoBox = []; //info boxes
+
+  for (i = 0; i < images; i++){
+
+    element.push(document.getElementById("image" + (i+1)));
+    infoBox.push(document.getElementById("button" + (i+1)));
+    Hammer(element[i]).on("swipeleft", function(){
+      slideLeft();
+    });
+    Hammer(element[i]).on("swiperight", function() {
+      slideRight();
+    });
+  }
+
+</script>
 
 </body></html>

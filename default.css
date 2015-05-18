@@ -44,6 +44,7 @@ p {
   margin:1em 0;
 }
 
+
 blockquote {
   margin:1em 0;
 }
@@ -158,5 +159,15 @@ blockquote p {
   left:153px;
   width:27px;
   height:15px;
+  background:#fff;
+}
+/* adds man image*/
+.rectangle-speech-border >  {
+  content:"image1";
+  position:absolute;
+  bottom:500px;
+  left:0px;
+  width:100px;
+  height:100px;
   background:#fff;
 }
