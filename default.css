@@ -35,13 +35,37 @@ a:visited:active {
 }
 
 #container {
-  width:300px;
+  width:25%;
   padding:0 0 10px;
+ overflow: hidden;
+  float:left;
+  height: 100%;
   margin:10px;
+
+}
+#container2 {
+  
+  float: none;
+  width: 50%;
+  padding:0 0 10px;
+  height: 100%;
+  margin:10px;
+  overflow: hidden;
+  display: table-cell;
+
+  
+}
+#container3 {
+  width:25%;
+  float: right;
+   height: 100%;
+ padding:0 0 10px;
+  margin:10px;
+  
 }
 
 p {
-  margin:1em 0;
+  margin:2em 0;
 }
 
 
@@ -51,7 +75,7 @@ blockquote {
 
 blockquote p {
   margin:0;
-  font-size:1em;
+  font-size:2em;
 }
 
 .follow {
@@ -71,9 +95,10 @@ blockquote p {
  style declarations.
  */
 .content {
-  position:relative;
+  position:absolute;
   z-index:1;
 }
+
 
 
 /* ============================================================================================================================
@@ -82,6 +107,7 @@ blockquote p {
 
 .rectangle-speech-border {
   position:relative;
+  width: 60%;
   padding:50px 15px;
   margin:1em 0 3em;
   border:3px solid #000000;
@@ -90,6 +116,7 @@ blockquote p {
   background:#fff;
   /* css3 */
   -webkit-border-radius:20px;
+
   -moz-border-radius:20px;
   border-radius:20px;
 }
@@ -161,13 +188,5 @@ blockquote p {
   height:15px;
   background:#fff;
 }
-/* adds man image*/
-.rectangle-speech-border >  {
-  content:"image1";
-  position:absolute;
-  bottom:500px;
-  left:0px;
-  width:100px;
-  height:100px;
-  background:#fff;
-}
+
+
