@@ -76,11 +76,7 @@ a:visited:active {
 }
 
 #Answer1 {
-  margin-left: 10px;
-  height: 70px;
-  font-size:3em;
-  /*width: 110%;*/
-  width: 300px
+  
  
 
 }
@@ -99,12 +95,10 @@ a:visited:active {
 }
 
   .answers {
- margin-left: 10px;
+  margin-left: 10px;
   height: 70px;
   font-size:3em;
-  width: 110%;*/
-  
-
+  width: 110%;
   background-color: transparent;
   
   border: 0;
