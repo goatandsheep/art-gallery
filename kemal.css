@@ -1,0 +1,82 @@
+body {
+    background-image: url("http://dev.artonthebrain.org/www/images/wall.jpg");
+      font-size: 2.3vw;
+}
+p {
+    margin: 1em;
+}
+img {
+    margin-top: 8%;
+    width: 50vw;
+    position: absolute;
+}
+table {
+    margin-left: 1em;
+}
+.table {
+    width: 100%;
+}
+.column {
+    margin-top: 10%;
+    float: left;
+    height: 100%;
+    width: 25%;
+}
+.column-mid {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+.imgBubble {
+    margin: 0.3em;
+    width: 5vw;
+    height: 5vw;
+    background-image: url("http://dev.artonthebrain.org/www/images/art01.png");
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+#bubble1{
+    background-size: 25vw;
+    background-position: 25% 50%;
+}
+#bubble2 {
+    background-size: 25vw;
+    background-position: 41% 33%;   
+}
+#bubble3{
+    background-size: 25vw;
+    background-position: 53% 40%;
+}
+.bob {
+    background-color: transparent;
+    border: 0.5vw solid navy;
+    position: relative;
+    margin-top: 8vw;
+}
+#section1 {
+    top: 22.1vw;
+    left: 12.6vw;
+    width: 6vw;
+    height: 6vw;
+}
+#section2 {
+    /*top: 205px;
+    left: 145px;*/
+    top: 15.3vw;
+    left: 15.6vw;
+    width: 6vw;
+    height: 6vw;
+}
+#section3 {
+    /*top: 230px;
+    left: 285px;*/
+    top: 16.8vw;
+    left: 15.9vw;
+    width: 6vw;
+    height: 6vw;
+}
