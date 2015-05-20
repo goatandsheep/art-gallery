@@ -184,3 +184,10 @@ table {
   height:15px;
   background:#fff;
 }
+
+.visible {
+  visibility: visible;
+}
+.hidden {
+  visibility: hidden;
+}
