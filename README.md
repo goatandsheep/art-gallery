@@ -4,6 +4,13 @@ Art Gallery
 Questions
 ---------
 
+* section1       	How do you think the boy is feeling?  		sad		happy	confused
+
+* section2			What do you think he is pointing at?		lake	duck	pigeon
+
+* section3			What kind of gun is in his hand?			rifle	shotgun	revolver
+
+
 Carousel - `index.html`
 -----------------------
 
