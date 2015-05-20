@@ -7,30 +7,36 @@
   <meta name="description" content="Questions about art.">
   <link rel="stylesheet" href="default.css">
 
-
 </head>
 
 <body>
   <div id="container">
 
     <div class="content">
+      
            
       <blockquote class="rectangle-speech-border">
+        
 
         <p>Welcome to the Story Activity<br> <br/></p>
 
-        <p>Guide to how to play</p>
+        <p> Please click on area  outlined <br> in 
+          <font color="blue">BLUE </font> that you wish to review</p>
+          <button id="button1" onclick="story_1()" class="info">INFO</button>          
+          <button id="button2" onclick="story_2()" class="info">INFO</button>
+          <button id="button3" onclick="story_3()" class="info">INFO</button>
+          <button id="button4" onclick="story_4()" class="info">INFO</button>
+          <button id="button5" onclick="story_5()" class="info">INFO</button>
+              
       </blockquote>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br><br><br>
-      <br/>
-        <img src="man.png" width=50% id="image1" class="visible"></img>
-      <button id="button1" class="info">INFO</button>
+     
+       
+     
+   <img  src="man.png" width=60%  top=1000px  id="image1" class="visible"></img>
+    
     </div>
-
+    
+     
   </div>
   <div id="container2">
 
@@ -39,7 +45,7 @@
     <br>
       <br>
     <br/>     
-        <img src="art1_2.png" width=120% id="image2" class="visible"></img>
+        <img src="art1_choose_story.png" width=200% id="image2" class="visible"></img>
      
     </div>
 
@@ -49,12 +55,10 @@
     <div class="content">
            
       
-        <p>These are your answers<br> <br/></p>
+        <p>Your Responses:<br> <br/></p>
 
-        
+       
       
-        <img src="art1_2.png" width=25% id="image2" class="visible"></img>
-      <button id="button1" class="info">INFO</button>
     </div>
 
   </div>
@@ -65,7 +69,9 @@
   var element = []; //images
   var infoBox = []; //info boxes
 
-  for (i = 0; i < images; i++){
+
+
+  for (i = 0; i < 5; i++){
 
     element.push(document.getElementById("image" + (i+1)));
     infoBox.push(document.getElementById("button" + (i+1)));
@@ -77,6 +83,29 @@
     });
   }
 
-</script>
+function story_1(){
+ 
+ <a href="story1.html"></a>
+
+  for (i=0; i<images; i++){
+    if (i != 1){
+      element[i].className="hidden";
+      infoBox[i].className="hidden";
+    }
+  }
+  document.getElementById("image2").style.left= "75px";
+}
+function story_2(){
+ 
+ <a href="story2.html"></a>
+
+  for (i=0; i<images; i++){
+    if (i != 1){
+      element[i].className="hidden";
+      infoBox[i].className="hidden";
+    }
+  }
+  document.getElementById("image2").style.left= "75px";
+}</script>
 
 </body></html>
