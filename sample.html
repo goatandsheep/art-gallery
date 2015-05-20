@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
+  <title>Art on the Brain: Questions</title>
+  <meta name="description" content="Questions about art.">
+  <link rel="stylesheet" href="default.css">
+
+</head>
+
+<body>
+  <div id="container1">
+
+    <div class="content">
+      
+           
+      <blockquote class="rectangle-speech-border">
+        
+
+        <p>Welcome to the Story Activity<br> <br/></p>
+
+        <p> Please click on area  outlined <br> in 
+          <font color="blue">BLUE </font> that you wish to review</p>
+          
+              
+      </blockquote>
+     
+       
+     
+   <img  src="man.png" width=60%  top=1000px  id="image1" class="visible"></img>
+    
+    </div>
+    
+     
+  </div>
+  <div id="container2">
+
+    <div class="content">
+    <br>
+    <br>
+      <br>
+    <br/>     
+        <img src="art1_choose_story.png" width=200% id="image2" class="visible"></img>
+     
+    </div>
+
+  </div>
+   <div id="container3">
+
+    <div class="content">
+           
+      
+        <p>Your Responses:<br> <br/></p>
+
+       
+      
+    </div>
+
+  </div>
+
+   
+<script type="text/javascript">
+
+  var element = []; //images
+  var infoBox = []; //info boxes
+
+
+
+  for (i = 0; i < 5; i++){
+
+    element.push(document.getElementById("image" + (i+1)));
+    infoBox.push(document.getElementById("button" + (i+1)));
+    Hammer(element[i]).on("swipeleft", function(){
+      slideLeft();
+    });
+    Hammer(element[i]).on("swiperight", function() {
+      slideRight();
+    });
+  }
+
+
+  
+</script>
+
+</body></html>

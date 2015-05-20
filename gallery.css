@@ -11,7 +11,11 @@ body {
     height:100%;
 }
 
-
+a {
+  position: absolute;
+  left: 50vw;
+  top: 25vh;
+}
 #outer{
   height: 100%;
   overflow: hidden;
