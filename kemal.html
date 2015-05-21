@@ -7,6 +7,8 @@
   <meta name="description" content="Questions about art.">
   <link rel="stylesheet" href="kemal.css">
 
+<script type="text/javascript" src="ask.js"></script>
+
 
 </head>
 
@@ -19,9 +21,7 @@
       <blockquote class="rectangle-speech-border">
         
 
-        <p>Welcome to the Story Activity<br> <br/></p>
-
-        <p><button id="ClickButton1" class="info">  CLICK  </button>  when ready to play</p>
+        <p id="question">Welcome to the Story Activity!<br><br/><button style="border-width:0.2em" onclick="start()">Click here when ready to play</button></p>
               
       </blockquote>
      
@@ -29,39 +29,17 @@
      
   
     
-        <p>space here</p>
+        <div id="options"> </div>
 
          <img  src="man.png"    id="image1"></img>
 
       
     </div>
-    <div class="column-mid">
-        <img src="art1_crop.png" class="image">
-            <button class="bob" id="section1">1</button>
-            <button class="bob" id="section2">2</button>
-            <button class="bob" id="section3">3</button>
-        </img>
+    <div id="column-mid">
+        <img src="art1_crop.png" class="image"></img>
     </div>
     <div class="column">
-        <table>
-            <tr>
-                <td>
-                    <div id="bubble1" class="imgBubble"></div>
-                </td>
-                <td>Selected answer</td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="bubble2" class="imgBubble"></div>
-                </td>
-                <td>Selected answer</td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="bubble3" class ="imgBubble"></div>
-                </td>
-                <td>Selected answer</td>
-            </tr>
+        <table id="answers">
         </table>
     </div>
 <!-- </div> -->
