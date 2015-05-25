@@ -1,15 +1,16 @@
 Art Gallery
 ===========
 
-Questions
----------
+This web app is meant to be a workspace for *Art on the Brain*, a Baycrest Hospital web application in the 2015 cohort of the Toronto Hacking for Health Hack-a-thon.
 
-* section1       	How do you think the boy is feeling?  		sad		happy	confused
+The app is made to work on an iPad 3 retina.
 
-* section2			What do you think he is pointing at?		lake	duck	pigeon
+###Art On the Brain
 
-* section3			What kind of gun is in his hand?			rifle	shotgun	revolver
-
+* **Purpose**: to determine how does artwork affect mental abilities
+* **Target**: high-functioning dimentia patients
+* Research has shown this can be reversed from life-long learning, such as analyzing artwork
+* **Method**: simulating a museum and digitizing museum activities
 
 Carousel - `index.html`
 -----------------------
@@ -24,15 +25,6 @@ Carousel - `index.html`
 * Find pages with [given tags](http://martyspellerberg.com/2011/11/creating-a-wordpress-tag-search-using-jquery/)
 	* Or [pull photos from a folder](https://stackoverflow.com/questions/22061073/how-do-i-get-images-file-name-from-a-given-folder) automatically
 	* Or automatically [scroll to a new page](https://stackoverflow.com/questions/9652944/jquery-page-scroll-to-different-page)
-
-###Art On the Brain
-
-* how does artwork affect mental abilities
-* high-functioning dimentia patients
-* life-long learning through artwork
-* simulating a museum to help with learning
-* museum activities
-
 
 ###What it does
 
@@ -52,3 +44,8 @@ Carousel - `index.html`
 * Change PHP to work with template
 * Each activity is a plugin
 * Circle border around photo
+
+Interactive Questions App - `kemal.html`
+----------------------------------------
+
+This interactive question app allows users to analyze an art piece through leading questions.
