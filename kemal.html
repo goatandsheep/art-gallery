@@ -2,45 +2,34 @@
 <!-- saved from url=(0057)http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
   <title>Art on the Brain: Questions</title>
   <meta name="description" content="Questions about art.">
-  <link rel="stylesheet" href="kemal.css">
+  <link rel="stylesheet" href="css/kemal.css">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no, minimal-ui">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<script type="text/javascript" src="ask.js"></script>
+<script type="text/javascript" src="scripts/ask.js"></script>
 
 
 </head>
 
 <body>
-<!--<div class="tables"> -->
-    <div class="column">
-       
-      
-           
-      <blockquote class="rectangle-speech-border">
-        
-
-        <p id="question">Welcome to the Story Activity!<br><br/><button style="border-width:0.2em" onclick="start()">Click here when ready to play</button></p>
-              
-      </blockquote>
-     
-       
-     
-  
-    
+    <div id="left-side" class="column">
         <div id="options"> </div>
+        <blockquote class="rectangle-speech-border">
+            <p id="question">Welcome to the Story Activity!<br><br/><button style="border-width:0.2em" onclick="start()">Click here when ready to play</button></p>
+        </blockquote>
 
-         <img  src="man.png"    id="image1"></img>
-
+        <img src="images/man.png" id="image1"></img>
       
     </div>
     <div id="column-mid">
-        <img src="art1_crop.png" class="image"></img>
+        <img src="images/art1_crop.png" class="image"></img>
     </div>
     <div class="column">
         <table id="answers">
         </table>
     </div>
-<!-- </div> -->
+
 </body></html>
