@@ -28,7 +28,8 @@ function start(){
 	document.getElementById('question').innerHTML = "Feel free to review the highlighted parts of the art.";
 	//load image locations
 	for (i = 0; i < question.length; i++){
-		document.getElementById('column-mid').innerHTML += "<button class='bob' id='section" + i + "' onclick='questInsert("+ i +");'></button>";
+		document.getElementById('column-mid').innerHTML += "<button class='selections' id='section" + i + "' onclick='questInsert("+ i +");'></button>";
+		//document.getElementById('options').innerHTML += "<br>";
 	}
 }
 
@@ -36,22 +37,30 @@ function questInsert(qNum){
 
 	if (question[qNum][0]){
 		document.getElementById('question').innerHTML = question[qNum][1];
-		//TODO: change class of answer bubbles to visible
-		//TODO: change answer bubbles to qNum
-		//TODO: change contents of answer bubbles
+		//document.getElementById('options').innerHTML = " ";
+
+		document.getElementById('section'+qNum).style.border = "0.5vw solid #FF8000";
 		for (i = 2; i < question[qNum].length; i++){
 			document.getElementById('options').innerHTML += ("<button class='answers' onclick='selectAnswer(" + qNum + ", " + i + ")'>" + question[qNum][i] + "</button>");
+		}
+		for (i=0; i<question.length; i++) {
+			document.getElementById("section"+i).disabled = true;
 		}
 	}
 }
 
 function selectAnswer(qNum, aNum){
 	document.getElementById('answers').innerHTML += ("<tr><td>" + "<div id='bubble" + qNum + "' class='imgBubble'></div>" + "</td><td>" + question[qNum][aNum] + "</td></tr>");
-
+	
 	//clear the options	
+	document.getElementById('section'+qNum).style.border = "0";
 	document.getElementById('options').innerHTML = " ";
 	question[qNum][0] = false;
 	remaining = remaining - 1;
+
+	for (i=0; i<question.length; i++) {
+		document.getElementById("section"+i).disabled = false;
+	}
 	if (remaining > 0){
 		document.getElementById('question').innerHTML = "Select another area of the art to explore.";
 	}
