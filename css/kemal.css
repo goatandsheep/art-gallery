@@ -11,14 +11,8 @@ body {
 
 }
 .column {
-    margin-top: 10vh;
-    float: left;
     width: 25vw;
     height: 90vh;
-}
-#column-mid {
-    float: left;
-    width: 50vw;
 }
 p {
     margin: 1em;
@@ -42,6 +36,8 @@ button{
 #left-side {
   vertical-align: bottom;
   position: relative;
+  float: left;
+  margin-top: 10vh;
 }
 #options {
   position: absolute;
@@ -53,11 +49,17 @@ button{
     bottom: 0;
     margin-left: -10px;
 }
-.image {
-    margin-top: 8vh;
+#column-mid {
+    float: left;
     width: 50vw;
-    max-height: 85vh;
+}
+.image {
+    margin-top: 8vw;
+    width: 50vw;
     position: absolute;
+}
+#right-side {
+  float: right;
 }
 table {
   margin-left: 1em;
