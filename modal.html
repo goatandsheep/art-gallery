@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"><head>
+<link rel="stylesheet" type="text/css" href="css/modal.css">
+  </head>
+<body>
+<audio id="myAudio">
+
+  <source src="http://www.thewormlab.com/MiaowMusic/mp3/Miaow-snip-Stirring%20of%20a%20fool.mp3" type="audio/mpeg">
+
+
+</audio>
+<button id="trigger" class="trigger-button" type="button" onClick="startAudio()">Launch Modal</button>
+
+<div id="content">
+  <h1>Question 1</h1>
+  <p><b>How does it make you feel?<br><br />Write a comment...</b></p>
+
+
+  <textarea id="comment" placeholder="Put comment here."></textarea>
+  <br>
+  <p style="text-align:right;">conversation with <b>Helene Picoult</b></p>
+  <button id="send" class="trigger-button" onClick=pauseAudio()>Send</button>
+  <br>
+  <br />
+  <br>
+  <p><b>...or record a comment.</b> Please click on the microphone button to start recording.</p>
+  <!-- START: Livefyre Embed -->
+  <div id="livefyre-comments"></div>
+  <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+  <script type="text/javascript">
+    (function () {
+        var articleId = fyre.conv.load.makeArticleId(null);
+        fyre.conv.load({}, [{
+            el: 'livefyre-comments',
+            network: "livefyre.com",
+            siteId: "375055",
+            articleId: articleId,
+            signed: false,
+            collectionMeta: {
+                articleId: articleId,
+                url: fyre.conv.load.makeCollectionUrl(),
+            }
+        }], function() {});
+    }());
+  </script>
+  <!-- END: Livefyre Embed -->
+
+
+  <img src="http://uxrepo.com/static/icon-sets/ionicons/svg/ios7-mic.svg" id="mic" class="paused" onClick="record()">
+
+
+</div>
+  </body>
+
+     <script type="text/javascript" src="scripts/modal.js"></script> 
+</html>
