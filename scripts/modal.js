@@ -153,6 +153,7 @@ var triggerButton = document.getElementById('trigger');
 
 triggerButton.addEventListener('click', function() {
   myModal.open();
+  startAudio();
 });
 
 function record() {
