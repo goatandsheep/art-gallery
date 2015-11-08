@@ -62,30 +62,37 @@ function slideRight(){
 	}
 }
 
-function imageGrow(){
-	elemLeft = window.getComputedStyle(document.getElementById('image2')).getPropertyValue('left');
-	document.getElementById("image2").style.width="600px";
-	document.getElementById("image2").style.bottom= "100px";
+function imageGrow(elemnum){
+	elemLeft = window.getComputedStyle(document.getElementById("image"+elemnum)).getPropertyValue('left');
+	document.getElementById("image"+elemnum).style.width="600px";
+	document.getElementById("image"+elemnum).style.bottom= "100px";
+	//document.getElementById("image"+elemnum).style.max-height = 80%;
 	for (i=0; i<images; i++){
-		if (i != 1){
+		if (i != elemnum){
 			element[i].className="hidden";
 			infoBox[i].className="hidden";
 		}
+		infoBox[i].disabled=true;
 	}
-	document.getElementById("image2").style.left= "75px";
+	document.getElementById("bleft").disabled = true;
+	document.getElementById("bright").disabled = true;
+	document.getElementById("image"+elemnum).style.left= "75px";
 }
 
-function imageShrink(){
-	if (document.getElementById("image2").style.width == "600px"){
-		document.getElementById("image2").style.width="300px";
-		document.getElementById("image2").style.bottom= "150px";
+function imageShrink(elemnum){
+	if (document.getElementById("image"+elemnum).style.width == "600px"){
+		document.getElementById("image"+elemnum).style.width="300px";
+		document.getElementById("image"+elemnum).style.bottom= "150px";
 		for (i=0; i<images; i++){
-			if (i != 1){
+			if (i != elemnum){
 				element[i].className="visible";
 				infoBox[i].className="info";
 			}
+		infoBox[i].disabled=false;
 		}
-		document.getElementById("image2").style.left= elemLeft;
+		document.getElementById("bleft").disabled = false;
+		document.getElementById("bright").disabled = false;
+		document.getElementById("image"+elemnum).style.left= elemLeft;
 	}
 }
 
@@ -96,40 +103,40 @@ function imageShrink(){
 	<div id="outer">
 		<div id="wall">
 
-			<div style="background: url(oj.jpg) bottom center no-repeat; background-size:100%;" id="image1" class="visible">
+			<div style="background: url(oj.jpg) bottom center no-repeat; background-size:100%;" id="image0" onclick="imageShrink(0)" class="visible">
 				<img src="oj.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button1" class="info">INFO</button>
+			<button id="button0" onclick="imageGrow(0)" class="info">INFO</button>
 
-			<div style="background: url(cake.jpg) bottom center no-repeat; background-size:100%;"  id="image2" onclick="imageShrink()" class="visible">
+			<div style="background: url(cake.jpg) bottom center no-repeat; background-size:100%;" id="image1" onclick="imageShrink(1)" class="visible">
 				<img src="cake.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button2" onclick="imageGrow()" class="info">INFO</button>
+			<button id="button1" onclick="imageGrow(1)" class="info">INFO</button>
 
-			<div style="background: url(venus.jpg) bottom center no-repeat; background-size:100%;" id="image3" class="visible">
+			<div style="background: url(venus.jpg) bottom center no-repeat; background-size:100%;" id="image2" onclick="imageShrink(2)" class="visible">
 				<img src="venus.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button3" class="info">INFO</button>
+			<button id="button2" onclick="imageGrow(2)" class="info">INFO</button>
 
-			<div style="background: url(cottage.jpg) bottom center no-repeat; background-size:100%;" id="image4" class="hidden">
+			<div style="background: url(cottage.jpg) bottom center no-repeat; background-size:100%;" id="image3" onclick="imageShrink(3)" class="hidden">
 				<img src="cottage.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button4" class="hidden">INFO</button>
+			<button id="button3" onclick="imageGrow(3)" class="hidden">INFO</button>
 
-			<div style="background: url(background.png) bottom center no-repeat; background-size:100%;" id="image5" class="hidden">
+			<div style="background: url(background.png) bottom center no-repeat; background-size:100%;" id="image4" onclick="imageShrink(4)" class="hidden">
 				<img src="background.png" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button5" class="hidden">INFO</button>
+			<button id="button4" onclick="imageGrow(4)" class="hidden">INFO</button>
 
-			<div style="background: url(error.gif) bottom center no-repeat; background-size:100%;" id="image6" class="hidden">
+			<div style="background: url(error.gif) bottom center no-repeat; background-size:100%;" id="image5" onclick="imageShrink(5)" class="hidden">
 				<img src="error.gif" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button6" class="hidden">INFO</button>
+			<button id="button5" onclick="imageGrow(5)" class="hidden">INFO</button>
 
-			<div style="background: url(firefight.jpg) bottom center no-repeat; background-size:100%;" id="image7" class="hidden">
+			<div style="background: url(firefight.jpg) bottom center no-repeat; background-size:100%;" id="image6" onclick="imageShrink(6)" class="hidden">
 				<img src="firefight.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button7" class="hidden">INFO</button>
+			<button id="button6" onclick="imageGrow(6)" class="hidden">INFO</button>
 
 			<a id="modal" href="modal.html">Go to modal</a><p><br></p>
 			<a id="questions" href="kemal.html">Go to questions</a>
@@ -148,8 +155,8 @@ function imageShrink(){
 
 	for (i = 0; i < images; i++){
 
-		element.push(document.getElementById("image" + (i+1)));
-		infoBox.push(document.getElementById("button" + (i+1)));
+		element.push(document.getElementById("image" + i));
+		infoBox.push(document.getElementById("button" + i));
 		Hammer(element[i]).on("swipeleft", function(){
 			slideLeft();
 		});
