@@ -1,6 +1,12 @@
 html {
     position: relative;
     height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
 body {
@@ -132,9 +138,10 @@ button {
   border: solid 10px #000000;
   display: block;
   width: 300px;
+  display: inline-block;
   visibility: visible;
   position: absolute;
-  maxHeight: 70%;
+  max-height: 70%;
   bottom: 150px;
   transition: width 0.5s ease-in-out 0s, left 0.5s ease-in-out 0s, bottom 0.5s ease-in-out 0s;
 }
