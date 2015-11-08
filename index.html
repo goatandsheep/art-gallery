@@ -14,6 +14,7 @@ var jump = 425;
 var counter = 0;	//which photo is in front
 var images = 7;		//need to make js that gets this number
 var elemLeft = "0px";
+var big = false;
 
 function slide(element, shift) {
 	var style = window.getComputedStyle(element);
@@ -22,77 +23,78 @@ function slide(element, shift) {
 	element.style.left = newpos;
 }
 function slideLeft(){
-	if (counter < (images - 2)){	//right-most image is visible when counter = counter+3
-		element[counter + 3].className = "visible";
-		infoBox[counter + 3].className = "info";
-		document.getElementById("bleft").disabled = true;
-		document.getElementById("bright").disabled = true;
+	if (counter < (images - 3)){	//right-most image is visible when counter = counter+3
+		if (!big){	//prevent it from moving if zoomed in
+			document.getElementById("bleft").disabled = true;
+			document.getElementById("bright").disabled = true;
 
-		for (i = 0; i<images; i++){
-			slide(element[i], -jump);
-			slide(infoBox[i], -jump);
-		}
-		setTimeout(function(){
-			element[counter].className = "hidden";
-			infoBox[counter].className = "hidden";
-			document.getElementById("bleft").disabled = false;
-			document.getElementById("bright").disabled = false;
+			for (i = 0; i<images; i++){
+				slide(element[i], -jump);
+				slide(infoBox[i], -jump);
+			}
+			setTimeout(function(){
+				document.getElementById("bleft").disabled = false;
+				document.getElementById("bright").disabled = false;
+			}, 500);
 			counter++;
-		}, 500);
+		}
 	}
 }
 function slideRight(){
-	if (counter > 0){	//left-most image is image 0
-		counter--;
-		element[counter].className = "visible";
-		infoBox[counter].className = "info";
-		document.getElementById("bleft").disabled = true;
-		document.getElementById("bright").disabled = true;
+	if (counter > 0){
+		if (!big){
+			counter--;
+			document.getElementById("bleft").disabled = true;
+			document.getElementById("bright").disabled = true;
 
-		for (i = 0; i<images; i++){
-			slide(element[i], jump);
-			slide(infoBox[i], jump);
+			for (i = 0; i<images; i++){
+				slide(element[i], jump);
+				slide(infoBox[i], jump);
+			}
+			setTimeout(function(){
+				document.getElementById("bleft").disabled = false;
+				document.getElementById("bright").disabled = false;
+			}, 500);
 		}
-		setTimeout(function(){
-			element[counter+3].className = "hidden";
-			infoBox[counter+3].className = "hidden";
-			document.getElementById("bleft").disabled = false;
-			document.getElementById("bright").disabled = false;
-		}, 500);
 	}
 }
 
 function imageGrow(elemnum){
+	big = true;
 	elemLeft = window.getComputedStyle(document.getElementById("image"+elemnum)).getPropertyValue('left');
 	document.getElementById("image"+elemnum).style.width="600px";
-	document.getElementById("image"+elemnum).style.bottom= "100px";
-	//document.getElementById("image"+elemnum).style.max-height = 80%;
+	document.getElementById("image"+elemnum).style.bottom= "13%";
+	document.getElementById("image"+elemnum).style.maxHeight = '80%';
+	document.getElementById("image"+elemnum).style.left= "75px";
+
 	for (i=0; i<images; i++){
 		if (i != elemnum){
 			element[i].className="hidden";
 			infoBox[i].className="hidden";
 		}
-		infoBox[i].disabled=true;
+		infoBox[i].className="hidden";
 	}
 	document.getElementById("bleft").disabled = true;
 	document.getElementById("bright").disabled = true;
-	document.getElementById("image"+elemnum).style.left= "75px";
 }
 
 function imageShrink(elemnum){
 	if (document.getElementById("image"+elemnum).style.width == "600px"){
-		document.getElementById("image"+elemnum).style.width="300px";
 		document.getElementById("image"+elemnum).style.bottom= "150px";
-		for (i=0; i<images; i++){
-			if (i != elemnum){
+		document.getElementById("image"+elemnum).style.left= elemLeft;
+		document.getElementById("image"+elemnum).style.width="300px";
+
+
+		setTimeout(function(){
+			document.getElementById("bleft").disabled = false;
+			document.getElementById("bright").disabled = false;
+			for (i=0; i<images; i++){
 				element[i].className="visible";
 				infoBox[i].className="info";
 			}
-		infoBox[i].disabled=false;
-		}
-		document.getElementById("bleft").disabled = false;
-		document.getElementById("bright").disabled = false;
-		document.getElementById("image"+elemnum).style.left= elemLeft;
+			big=false;
+		}, 500);
+
 	}
 }
 
@@ -118,25 +120,25 @@ function imageShrink(elemnum){
 			</div>
 			<button id="button2" onclick="imageGrow(2)" class="info">INFO</button>
 
-			<div style="background: url(cottage.jpg) bottom center no-repeat; background-size:100%;" id="image3" onclick="imageShrink(3)" class="hidden">
+			<div style="background: url(cottage.jpg) bottom center no-repeat; background-size:100%;" id="image3" onclick="imageShrink(3)" class="visible">
 				<img src="cottage.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button3" onclick="imageGrow(3)" class="hidden">INFO</button>
+			<button id="button3" onclick="imageGrow(3)" class="info">INFO</button>
 
-			<div style="background: url(background.png) bottom center no-repeat; background-size:100%;" id="image4" onclick="imageShrink(4)" class="hidden">
+			<div style="background: url(background.png) bottom center no-repeat; background-size:100%;" id="image4" onclick="imageShrink(4)" class="visible">
 				<img src="background.png" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button4" onclick="imageGrow(4)" class="hidden">INFO</button>
+			<button id="button4" onclick="imageGrow(4)" class="info">INFO</button>
 
-			<div style="background: url(error.gif) bottom center no-repeat; background-size:100%;" id="image5" onclick="imageShrink(5)" class="hidden">
+			<div style="background: url(error.gif) bottom center no-repeat; background-size:100%;" id="image5" onclick="imageShrink(5)" class="visible">
 				<img src="error.gif" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button5" onclick="imageGrow(5)" class="hidden">INFO</button>
+			<button id="button5" onclick="imageGrow(5)" class="info">INFO</button>
 
-			<div style="background: url(firefight.jpg) bottom center no-repeat; background-size:100%;" id="image6" onclick="imageShrink(6)" class="hidden">
+			<div style="background: url(firefight.jpg) bottom center no-repeat; background-size:100%;" id="image6" onclick="imageShrink(6)" class="visible">
 				<img src="firefight.jpg" width="100%" style="visibility:hidden"/>
 			</div>
-			<button id="button6" onclick="imageGrow(6)" class="hidden">INFO</button>
+			<button id="button6" onclick="imageGrow(6)" class="info">INFO</button>
 
 			<a id="modal" href="modal.html">Go to modal</a><p><br></p>
 			<a id="questions" href="kemal.html">Go to questions</a>
