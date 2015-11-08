@@ -68,16 +68,17 @@ function imageGrow(){
 }
 
 function imageShrink(){
-	
-	document.getElementById("image2").style.width="300px";
-	document.getElementById("image2").style.bottom= "150px";
-	for (i=0; i<images; i++){
-		if (i != 1){
-			element[i].className="visible";
-			infoBox[i].className="info";
+	if (document.getElementById("image2").style.width == "600px"){
+		document.getElementById("image2").style.width="300px";
+		document.getElementById("image2").style.bottom= "150px";
+		for (i=0; i<images; i++){
+			if (i != 1){
+				element[i].className="visible";
+				infoBox[i].className="info";
+			}
 		}
+		document.getElementById("image2").style.left= elemLeft;
 	}
-	document.getElementById("image2").style.left= elemLeft;
 }
 
 </script>
