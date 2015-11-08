@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
 
-<script type="text/javascript" src="hammer.js"></script>
+<script type="text/javascript" src="scripts/hammer.js"></script>
 
 <script type="text/javascript">
 var jump = 425;
@@ -96,29 +96,43 @@ function imageShrink(){
 	<div id="outer">
 		<div id="wall">
 
-			<img src="oj.jpg" id="image1" class="visible"></img>
+			<div style="background: url(oj.jpg) bottom center no-repeat; background-size:100%;" id="image1" class="visible">
+				<img src="oj.jpg" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button1" class="info">INFO</button>
 
-			<img src="cake.jpg"  id="image2" onclick="imageShrink()" class="visible"></img>
+			<div style="background: url(cake.jpg) bottom center no-repeat; background-size:100%;"  id="image2" onclick="imageShrink()" class="visible">
+				<img src="cake.jpg" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button2" onclick="imageGrow()" class="info">INFO</button>
 
-			<img src="venus.jpg" id="image3" class="visible"></img>
+			<div style="background: url(venus.jpg) bottom center no-repeat; background-size:100%;" id="image3" class="visible">
+				<img src="venus.jpg" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button3" class="info">INFO</button>
 
-			<img src="cottage.jpg" id="image4" class="hidden"></img>
+			<div style="background: url(cottage.jpg) bottom center no-repeat; background-size:100%;" id="image4" class="hidden">
+				<img src="cottage.jpg" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button4" class="hidden">INFO</button>
 
-			<img src="background.png" id="image5" class="hidden"></img>
+			<div style="background: url(background.png) bottom center no-repeat; background-size:100%;" id="image5" class="hidden">
+				<img src="background.png" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button5" class="hidden">INFO</button>
 
-			<img src="error.gif" id="image6" class="hidden"></img>
+			<div style="background: url(error.gif) bottom center no-repeat; background-size:100%;" id="image6" class="hidden">
+				<img src="error.gif" width="100%" style="visibility:hidden"/>
+			</div>
 			<button id="button6" class="hidden">INFO</button>
+
+			<div style="background: url(firefight.jpg) bottom center no-repeat; background-size:100%;" id="image7" class="hidden">
+				<img src="firefight.jpg" width="100%" style="visibility:hidden"/>
+			</div>
+			<button id="button7" class="hidden">INFO</button>
 
 			<a id="modal" href="modal.html">Go to modal</a><p><br></p>
 			<a id="questions" href="kemal.html">Go to questions</a>
-
-			<img src="firefight.jpg" id="image7" class="hidden"></img>
-			<button id="button7" class="hidden">INFO</button>
 		</div>
 		<div id="floor">
 			<img src="http://gfx9.com/images/contents/w/o/wood-floor-picture-material-0.jpg" width=100%></img>
