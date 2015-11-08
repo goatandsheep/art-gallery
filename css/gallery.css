@@ -14,8 +14,13 @@ body {
 
 a {
   position: absolute;
-  left: 50vw;
   top: 25vh;
+}
+#modal {  
+  left: 50vw;
+}
+#questions{  
+  left: 40vw;
 }
 #outer{
   height: 100%;
