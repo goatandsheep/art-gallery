@@ -25,6 +25,8 @@ function slideLeft(){
 	if (counter < (images - 2)){	//right-most image is visible when counter = counter+3
 		element[counter + 3].className = "visible";
 		infoBox[counter + 3].className = "info";
+		document.getElementById("bleft").disabled = true;
+		document.getElementById("bright").disabled = true;
 
 		for (i = 0; i<images; i++){
 			slide(element[i], -jump);
@@ -33,6 +35,8 @@ function slideLeft(){
 		setTimeout(function(){
 			element[counter].className = "hidden";
 			infoBox[counter].className = "hidden";
+			document.getElementById("bleft").disabled = false;
+			document.getElementById("bright").disabled = false;
 			counter++;
 		}, 500);
 	}
@@ -42,6 +46,8 @@ function slideRight(){
 		counter--;
 		element[counter].className = "visible";
 		infoBox[counter].className = "info";
+		document.getElementById("bleft").disabled = true;
+		document.getElementById("bright").disabled = true;
 
 		for (i = 0; i<images; i++){
 			slide(element[i], jump);
@@ -50,6 +56,8 @@ function slideRight(){
 		setTimeout(function(){
 			element[counter+3].className = "hidden";
 			infoBox[counter+3].className = "hidden";
+			document.getElementById("bleft").disabled = false;
+			document.getElementById("bright").disabled = false;
 		}, 500);
 	}
 }
@@ -106,8 +114,8 @@ function imageShrink(){
 			<img src="error.gif" id="image6" class="hidden"></img>
 			<button id="button6" class="hidden">INFO</button>
 
-			<a href="modal.html">Go to modal</a>
-			<a href="kemal.html">Go to questions</a>
+			<a id="modal" href="modal.html">Go to modal</a><p><br></p>
+			<a id="questions" href="kemal.html">Go to questions</a>
 
 			<img src="firefight.jpg" id="image7" class="hidden"></img>
 			<button id="button7" class="hidden">INFO</button>
